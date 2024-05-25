@@ -1,35 +1,44 @@
-In this project, let's build a **Notifications** app by applying the concepts we have learned till now.
+# Components And Props
+### components
+- A component is a JS function that returns a JSX element
+```
+const Welcome = () => <h1 className="message">Hello, component</h1>;
+```
+- A component name should always start with Capital letter
+- React treats the component starting with small letter as a html element
+```
+<script type = 'text/babel'>
+const Greet = () => <h1 className = 'greet'>Good Morning</h1>
+ReactDOM.render(<Greet/>,document.getElementById('root'))
+</script>
+```
+### *Note* - we can call the function with self-closing-tag
 
-### Refer to the image below:
+# Properties(props)
+### React allows us to pass information to component using props
 
-<br/>
-<div style="text-align: center;">
-<img src="https://assets.ccbp.in/frontend/content/react-js/notifications-lg-output.png" alt="notifications-output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+## *Passing Props*
+```
+const Greet = () => <h1 className = 'heading'>Hello</h1>
+ReactDOM.render(<Greet name = 'Reshma' greeting = 'Good Afternoon'/>,
+document.getElementById('root'))
+```
+## *Accessing Props*
+#### The component access props as a parameter and can be accessed directly
+#### Example :
+```
+const Greet = (props) =>
+const {name,greet} = props
+return (
+<h1 className='heading'>Hello {name},{greet}</h1>
 
-### Design Files
+ReactDOM.render(<Greet name = 'Reshma' greet = 'Good Morning'/>,document.getElementById('root'))
+```
 
-<details>
-<summary>Click to view</summary>
+### _Components are **Reusable** and **composable**_
 
-- [Extra Small (Size < 576px), Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/notifications-sm-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/notifications-lg-output.png)
-
-</details>
-
-### Completion Instructions
-
-<details>
-<summary>Implementation Files</summary>
-<br/>
-
-Use these files to complete the implementation:
-
-- `index.js`
-- `index.css`
-</details>
-
+---
+# Example : Simple Notification Page Built With React Components and Props
 ### Resources
 
 <details>
@@ -62,8 +71,3 @@ Use these files to complete the implementation:
 - Roboto
 
 </details>
-
-> ### _Things to Keep in Mind_
->
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
